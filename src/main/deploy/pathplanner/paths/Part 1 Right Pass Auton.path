@@ -1,0 +1,66 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 3.5494772727272723,
+        "y": 2.1488522727272734
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.460572008822509,
+        "y": 2.1901254361695552
+      },
+      "isLocked": false,
+      "linkedName": "Right Pass auton (endpoint for part 2)"
+    },
+    {
+      "anchor": {
+        "x": 7.868034090909092,
+        "y": 2.1488522727272734
+      },
+      "prevControl": {
+        "x": 6.591471565969082,
+        "y": 2.198646687862693
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Right Pass auton part 1"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "Start Intake",
+      "waypointRelativePos": 1.0,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Start Intake"
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 89.30972280213486
+  },
+  "reversed": false,
+  "folder": "Old",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": 61.64503821467591
+  },
+  "useDefaultConstraints": true
+}

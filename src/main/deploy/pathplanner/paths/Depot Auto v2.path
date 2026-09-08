@@ -1,0 +1,147 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.8487018544935796,
+        "y": 7.340827389443652
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.0447700363117614,
+        "y": 7.69125920762547
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 0.484188888888889,
+        "y": 7.0655222222222225
+      },
+      "prevControl": {
+        "x": 0.3992777729444986,
+        "y": 7.300660697145146
+      },
+      "nextControl": {
+        "x": 0.5691000048332793,
+        "y": 6.830383747299299
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 0.484188888888889,
+        "y": 5.184844444444443
+      },
+      "prevControl": {
+        "x": 0.5928363986329388,
+        "y": 4.959687346785016
+      },
+      "nextControl": {
+        "x": 0.37554137914483915,
+        "y": 5.41000154210387
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.7801999999999998,
+        "y": 5.0776555555555545
+      },
+      "prevControl": {
+        "x": 1.81059458076557,
+        "y": 5.325801015840616
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "Depot Shot"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.9576763485477103,
+      "rotationDegrees": -90.31858900982517
+    },
+    {
+      "waypointRelativePos": 1.8497925311202996,
+      "rotationDegrees": -92.64089377132245
+    },
+    {
+      "waypointRelativePos": 2.5419087136929277,
+      "rotationDegrees": -88.5206143213237
+    }
+  ],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.25,
+      "maxWaypointRelativePos": 0.55,
+      "constraints": {
+        "maxVelocity": 2.0,
+        "maxAcceleration": 2.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "Deploy Intake",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Deploy Intake"
+        }
+      }
+    },
+    {
+      "name": "Start Intake",
+      "waypointRelativePos": 0.4992555831265416,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Start Intake"
+        }
+      }
+    },
+    {
+      "name": "Warmup Shooter",
+      "waypointRelativePos": 1.7420661715057193,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Warmup Shooter"
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 156.64443514071394
+  },
+  "reversed": false,
+  "folder": null,
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -90.0
+  },
+  "useDefaultConstraints": true
+}
