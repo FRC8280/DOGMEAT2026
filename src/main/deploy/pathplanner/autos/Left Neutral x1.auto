@@ -15,15 +15,15 @@
                 }
               },
               {
-                "type": "named",
+                "type": "path",
                 "data": {
-                  "name": "Start Intake"
+                  "pathName": "Left Neutral Intake v2"
                 }
               },
               {
-                "type": "path",
+                "type": "named",
                 "data": {
-                  "pathName": "Depot Path"
+                  "name": "Start Intake"
                 }
               }
             ]

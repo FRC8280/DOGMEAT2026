@@ -21,7 +21,7 @@ import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj.GenericHID.RumbleType;
+//import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -40,8 +40,8 @@ import edu.wpi.first.wpilibj.Timer;
 
 import com.pathplanner.lib.auto.NamedCommands;
 
-import frc.robot.Constants.EmergencyOperatorControls;
-import frc.robot.Constants.ShooterConstants;
+//import frc.robot.Constants.EmergencyOperatorControls;
+//import frc.robot.Constants.ShooterConstants;
 import frc.robot.commands.Swerve.DriveToTargetDropIn;
 //import dev.doglog.DogLog;
 //import dev.doglog.DogLogOptions;
@@ -179,48 +179,7 @@ public class RobotContainer {
     }
 
     public void periodic() {
-        /*
-         * SmartDashboard.putNumber("PowerSystem/Voltage",
-         * powerDistributionSystem.getVoltage());
-         * SmartDashboard.putNumber("PowerSystem/Current",
-         * powerDistributionSystem.getTotalCurrent());
-         */
-        // countdownLED.periodic();
-        // Lightly vibrate primary controller when the hood motor is at or near
-        // the retracted position. Use the motor-reported position (rotations)
-        // and trigger when within 95% of the retracted motor setpoint or a
-        // small absolute tolerance when the setpoint is zero.
-        /*
-         * try {
-         * double targetMotorPos = Constants.HoodConstants.kHoodSetpointA; // retracted
-         * motor rotations
-         * double motorPos = m_Shooter.m_Hood.getMotorPositionRotations();
-         * 
-         * boolean nearRetracted;
-         * if (Math.abs(targetMotorPos) > 1e-6) {
-         * // If target non-zero, use relative 95% threshold and 5% closeness
-         * nearRetracted = Math.abs(motorPos - targetMotorPos) <=
-         * Math.abs(targetMotorPos) * 0.05
-         * || motorPos >= 0.95 * targetMotorPos;
-         * } else {
-         * // If target is zero (common for a home position), use a small
-         * // absolute tolerance (0.05 rotations) to avoid relying on exact equality.
-         * nearRetracted = Math.abs(motorPos - targetMotorPos) <= 0.05;
-         * }
-         * 
-         * if (nearRetracted) {
-         * // light rumble (~30%) on both sides
-         * driver.getHID().setRumble(RumbleType.kLeftRumble, 0.3);
-         * driver.getHID().setRumble(RumbleType.kRightRumble, 0.3);
-         * } else {
-         * // ensure rumble is off otherwise
-         * driver.getHID().setRumble(RumbleType.kLeftRumble, 0.0);
-         * driver.getHID().setRumble(RumbleType.kRightRumble, 0.0);
-         * }
-         * } catch (Exception e) {
-         * // If anything goes wrong (subsystems not initialized yet), don't crash.
-         * }
-         */
+      
     }
 
     public void SetShootingSTate(ShootingState state) {

@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.LEDConstants;
 import frc.robot.VisionManager.VisionStatus;
-
 import com.ctre.phoenix6.CANBus;
 import com.ctre.phoenix6.controls.ColorFlowAnimation;
 import com.ctre.phoenix6.controls.SolidColor;
@@ -25,7 +24,7 @@ public class LEDSubsystem extends SubsystemBase {
 
     private final CANBus kCANBus = new CANBus("rio");
     private final CANdle m_RearCandle = new CANdle(LEDConstants.kRearCandleID, kCANBus);
-    private final CANdle m_FrontCandle = new CANdle(LEDConstants.kFrontCandleID, kCANBus);
+    //private final CANdle m_FrontCandle = new CANdle(LEDConstants.kFrontCandleID, kCANBus);
     private final Timer timer = new Timer();
 
     // Colors and animation
@@ -101,24 +100,24 @@ public class LEDSubsystem extends SubsystemBase {
         if(status ==  VisionStatus.NOT_SEEDED)
         {
             m_RearCandle.setControl(new SolidColor(0, 32).withColor(kRed));
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kRed));
+            //m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kRed));
         }
         else if (status == VisionStatus.SEEKING_MT2)
         {
             m_RearCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow)); 
+            //m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow)); 
         }
         else if (status == VisionStatus.LOCKED)
         {
             m_RearCandle.setControl(new SolidColor(0, 32).withColor(kGreen));
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kGreen)); 
+            //m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kGreen)); 
         }
         m_lastVisionStatus = status;
     }
 
     public LEDSubsystem() {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kWhite));
-        m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kWhite));
+        //  m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kWhite));
         m_LightStatus = LightStatus.WHITE;
 
         clearTimerStrip();
@@ -256,7 +255,7 @@ public class LEDSubsystem extends SubsystemBase {
             return;
         }
 
-        StatusCode status = m_FrontCandle.setControl(
+        StatusCode status = m_RearCandle.setControl(
                 solidRequest
                         .withLEDStartIndex(startInclusive)
                         .withLEDEndIndex(endInclusive)
@@ -282,8 +281,8 @@ public class LEDSubsystem extends SubsystemBase {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kRed));
         m_LightStatus = LightStatus.RED;
 
-        if (secondLight)
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kRed));
+       // if (secondLight)
+        //    m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kRed));
     }
 
     public void setGreen(boolean secondLight) {
@@ -293,8 +292,8 @@ public class LEDSubsystem extends SubsystemBase {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kGreen));
         m_LightStatus = LightStatus.GREEN;
 
-        if (secondLight)
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kGreen));
+       // if (secondLight)
+        //    m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kGreen));
     }
 
     public void setBlue(boolean secondLight) {
@@ -304,8 +303,8 @@ public class LEDSubsystem extends SubsystemBase {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kBlue));
         m_LightStatus = LightStatus.YELLOW;
 
-        if (secondLight)
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kBlue));
+       // if (secondLight)
+        //   m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kBlue));
     }
 
     public void setYellow(boolean secondLight) {
@@ -315,13 +314,13 @@ public class LEDSubsystem extends SubsystemBase {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
         m_LightStatus = LightStatus.YELLOW;
 
-        if (secondLight)
-            m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
+        //if (secondLight)
+        //    m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
     }
 
     public void showTeamColors() {
         m_RearCandle.setControl(new SolidColor(0, 32).withColor(kBlue));
-        m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
+       // m_FrontCandle.setControl(new SolidColor(0, 32).withColor(kYellow));
     }
     public Command updateLEDs() {
         return run(() -> {

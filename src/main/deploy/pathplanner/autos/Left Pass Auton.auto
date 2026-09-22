@@ -5,27 +5,21 @@
     "data": {
       "commands": [
         {
-          "type": "wait",
+          "type": "path",
           "data": {
-            "waitTime": 0.5
+            "pathName": "Part 1 left pass auton"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "Kiss Auto Path Start1481"
-          }
-        },
-        {
-          "type": "wait",
-          "data": {
-            "waitTime": 3.5
+            "pathName": "Part 2 Left pass auton"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "Kiss Auto Path End1481"
+            "pathName": "Left Pass Auton"
           }
         }
       ]

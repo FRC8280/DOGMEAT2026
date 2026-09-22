@@ -17,21 +17,21 @@ public class ShooterLookup {
 
   public ShooterLookup() {
     // distance, rpm, hoodDeg
-    //Original data
-
-    /*addPoint(1.5, 2400, 53); //layup distance confirmed
+   
+    //Dogmesat values from post Troy 4/1/26 
+    addPoint(1.5, 2400, 53); //layup distance confirmed
     addPoint(2.5, 3100, 51);
     addPoint(2.8000, 3000, 51);
     addPoint(3.3000, 3250, 48);   //Configrmed 3/22
     addPoint(4.0, 3750, 48);      //confirmed lower percetage 3/22
     addPoint(7.0, 5600, 45);      //confirmed lower percetage 3/22
-    addPoint(10.0, 5600, 45); */ 
+    addPoint(10.0, 5600, 45);  
 
-    //New shooter values for 4/14
-    addPoint(1.5, 2500, 70);
+    //New shooter values for 4/14 - Inugami values
+    /*addPoint(1.5, 2500, 70);
     addPoint(2.2, 2500, 60);
     addPoint(3.3, 3000, 60);
-    addPoint(5.2, 3500, 45);
+    addPoint(5.2, 3500, 45);*/
   }
 
   /** Adds one calibration point to the table. */

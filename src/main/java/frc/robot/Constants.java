@@ -42,7 +42,7 @@ public class Constants {
         public static final int kPivotCurrentLimit = 30;
         public static final int kPivotStatorCurrentLimit = 60;
         public static final double kPivotStowed = 0;
-        public static final double kPivotDeployed = -21.316;
+        public static final double kPivotDeployed = -18.0;//-21.316;
         public static final double kPivotAgitate = -13.6;//-15.650;
 
         public static final int kRollerIntakeMotorId = 12;

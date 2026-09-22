@@ -67,9 +67,9 @@ public class Shooter extends SubsystemBase {
     private final Supplier<Pose2d> m_robotPoseSupplier;
 
     private TalonFX m_ShooterMotorLeft0;
-    private TalonFX m_FollowerMotorLeft1;
+    //private TalonFX m_FollowerMotorLeft1;
     private TalonFX m_FollowerMotorRight0;
-    private TalonFX m_FollowerMotorRight1;
+    //private TalonFX m_FollowerMotorRight1;
 
     private TalonFX m_AccelerateMotor;
     private ShooterLookup m_ShooterLookup;
@@ -109,8 +109,8 @@ public class Shooter extends SubsystemBase {
         m_ShooterMotorLeft0 = new TalonFX(ShooterConstants.kShooterMotorId);
         m_FollowerMotorRight0 = new TalonFX(ShooterConstants.kFollowerMotorId);
         // Additional shooter motors
-        m_FollowerMotorLeft1 = new TalonFX(ShooterConstants.kFollowerMotorLeft1Id);
-        m_FollowerMotorRight1 = new TalonFX(ShooterConstants.kFollowerMotorRight1Id);
+        //m_FollowerMotorLeft1 = new TalonFX(ShooterConstants.kFollowerMotorLeft1Id);
+        //m_FollowerMotorRight1 = new TalonFX(ShooterConstants.kFollowerMotorRight1Id);
         m_AccelerateMotor = new TalonFX(ShooterConstants.kAccelerateMotorId);
 
         TalonFXConfiguration shooterConfig = new TalonFXConfiguration();
@@ -149,14 +149,14 @@ public class Shooter extends SubsystemBase {
 
         m_ShooterMotorLeft0.getConfigurator().apply(shooterConfig);
         m_FollowerMotorRight0.getConfigurator().apply(shooterConfig);
-        m_FollowerMotorLeft1.getConfigurator().apply(shooterConfig);
-        m_FollowerMotorRight1.getConfigurator().apply(shooterConfig);
+        //m_FollowerMotorLeft1.getConfigurator().apply(shooterConfig);
+        //m_FollowerMotorRight1.getConfigurator().apply(shooterConfig);
 
         // Configure followers: both new motors follow the primary left leader
         // Left1 follows with same alignment as the leader; Right followers are opposed
-        m_FollowerMotorLeft1.setControl(new Follower(m_ShooterMotorLeft0.getDeviceID(), MotorAlignmentValue.Aligned));
+        //m_FollowerMotorLeft1.setControl(new Follower(m_ShooterMotorLeft0.getDeviceID(), MotorAlignmentValue.Aligned));
         m_FollowerMotorRight0.setControl(new Follower(m_ShooterMotorLeft0.getDeviceID(), MotorAlignmentValue.Opposed));
-        m_FollowerMotorRight1.setControl(new Follower(m_ShooterMotorLeft0.getDeviceID(), MotorAlignmentValue.Opposed));
+        //m_FollowerMotorRight1.setControl(new Follower(m_ShooterMotorLeft0.getDeviceID(), MotorAlignmentValue.Opposed));
 
         // Setup preshot acceleration stage
         TalonFXConfiguration accelConfig = new TalonFXConfiguration();
@@ -513,7 +513,7 @@ public class Shooter extends SubsystemBase {
          */
 
         SmartDashboard.putBoolean("Shooter/Hood up", hoodIsUp());
-        SmartDashboard.putNumber("Shooter/Hood  Angle", m_Hood.getCommandedAngleDeg());
+        //SmartDashboard.putNumber("Shooter/Hood  Angle", m_Hood.getCommandedAngleDeg());
 
         if (Constants.kVerboseDashboard) {
             SmartDashboard.putNumber("Shooter/Hood Actuator Angle", hoodActuatorAngle);

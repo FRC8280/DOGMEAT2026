@@ -17,7 +17,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Left First Score v3"
+                  "pathName": "Right Neutral Intake v2"
                 }
               },
               {
@@ -42,15 +42,22 @@
           }
         },
         {
-          "type": "named",
+          "type": "parallel",
           "data": {
-            "name": "Stop Shooter"
-          }
-        },
-        {
-          "type": "path",
-          "data": {
-            "pathName": "Left Disruptor Proof Second Shot"
+            "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Stop Shooter"
+                }
+              },
+              {
+                "type": "path",
+                "data": {
+                  "pathName": "Right Second Score - 503 (DO NOT USE AT COMP)"
+                }
+              }
+            ]
           }
         },
         {
@@ -68,7 +75,7 @@
         {
           "type": "named",
           "data": {
-            "name": "Warmup Shooter"
+            "name": "Stop Shooter"
           }
         }
       ]

@@ -51,7 +51,7 @@ public class VisionManager {
     private static final double MAX_MT2_ANGULAR_SPEED_RAD_PER_SEC = 3.0;
     private static final double MAX_MT2_DISTANCE_METERS = 7.0;
     private static final double MAX_SINGLE_TAG_MT2_DISTANCE_METERS = 3.5;
-    private static final double MAX_VISION_TRANSLATION_ERROR_METERS = 3.0;
+    //private static final double MAX_VISION_TRANSLATION_ERROR_METERS = 3.0;
 
     // Deterministic covariance model.
     private static final double ONE_TAG_BASE_STD_DEV_METERS = 1.20;
@@ -429,9 +429,9 @@ public class VisionManager {
             return "Single tag too far";
         }
 
-        Pose2d currentPose = drivetrain.getState().Pose;
-        double translationError = currentPose.getTranslation()
-                .getDistance(estimate.pose.getTranslation());
+        //Pose2d currentPose = drivetrain.getState().Pose;
+       // double translationError = currentPose.getTranslation()
+        //        .getDistance(estimate.pose.getTranslation());
 
         /*if (translationError > MAX_VISION_TRANSLATION_ERROR_METERS) {
             return "Pose jump too large";
