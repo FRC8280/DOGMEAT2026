@@ -39,20 +39,31 @@ public class HoodSystem extends SubsystemBase {
     }
 
     private static int angleToServoValue(double angle)
-     {
-        // Clamp the input angle
-        angle = Math.max(0.0, Math.min(15.0, angle));
+    {
+        // Desired mapping:
+        //  - 70 degrees -> fully retracted -> use kMinExtensionPulseWidth
+        //  - 25 degrees -> fully extended  -> use kMaxExtensionPulseWidth
+        // We'll interpolate linearly between these two angles.
 
-        // Normalize angle to 0–1 range
-        double normalized =  (angle / 15.0);
+        // Define the angle endpoints from HoodConstants (these match previous motor-based mapping)
+        final double angleRetracted = frc.robot.Constants.HoodConstants.kRetractedAngle; // 70.0
+        final double angleExtended = frc.robot.Constants.HoodConstants.kHoodAngleB;     // 25.0
 
-        // Scale to servo range
-        double servoValue = LinearServoConstants.kMinPulseWidth +
-                        normalized * (LinearServoConstants.kMaxPulseWidth - LinearServoConstants.kMinPulseWidth);
+        // If angle is outside the [extended, retracted] range, clamp it
+        double clamped = Math.max(Math.min(angle, angleRetracted), angleExtended);
 
-        // Final clamp for safety
-        double value =  Math.max(LinearServoConstants.kMinPulseWidth,Math.min(LinearServoConstants.kMaxPulseWidth, servoValue));
-        //value = Math.max(LinearServoConstants.kMinPulseWidth, Math.min(LinearServoConstants.kMaxPulseWidth, value));
+        // Compute interpolation factor t in [0,1]
+        // t = 0 -> at extended angle (25 deg) -> full extension (max pulse)
+        // t = 1 -> at retracted angle (70 deg) -> full retraction (min pulse)
+        double t = (clamped - angleExtended) / (angleRetracted - angleExtended);
+
+        // Interpolate pulse width between max extension (at t=0) and min extension (at t=1)
+        double pulseAtT = LinearServoConstants.kMaxExtensionPulseWidth * (1.0 - t)
+                        + LinearServoConstants.kMinExtensionPulseWidth * t;
+
+        // Final safety clamp to overall pulse bounds
+        double value = Math.max(LinearServoConstants.kMinPulseWidth,
+                        Math.min(LinearServoConstants.kMaxPulseWidth, pulseAtT));
 
         return (int)Math.round(value);
     }

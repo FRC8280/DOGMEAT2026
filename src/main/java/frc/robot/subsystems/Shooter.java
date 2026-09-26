@@ -231,6 +231,7 @@ public class Shooter extends SubsystemBase {
     }
 
     public void SetHood(double angle) {
+        
         m_Hood.setAngle(angle);
     }
 

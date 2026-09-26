@@ -42,7 +42,7 @@ public class Constants {
         public static final int kPivotCurrentLimit = 30;
         public static final int kPivotStatorCurrentLimit = 60;
         public static final double kPivotStowed = 0;
-        public static final double kPivotDeployed = -18.0;//-21.316;
+        public static final double kPivotDeployed = -21.471;// -18.0;//-21.316;
         public static final double kPivotAgitate = -13.6;//-15.650;
 
         public static final int kRollerIntakeMotorId = 12;
@@ -122,7 +122,7 @@ public class Constants {
         public static Translation2d RedHub = new Translation2d(11.89, 4.035);
 
         public static double kPassRPM = 250; //3000;
-    public static int kPassHoodDeg = 45; //35;
+        public static int kPassHoodDeg = 45; //35;
     }
 
     public static final class HoodConstants {

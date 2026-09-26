@@ -260,10 +260,6 @@ public class RobotContainer {
 
         fIsAutoAiming = false;
 
-        // Todo stop any auto aiming system
-       // m_warmupTimer.stop();
-//m_warmupTimer.reset();
-
         m_intakeCycleTimer.stop();
         m_intakeDeployTimer.stop();
 
@@ -354,7 +350,7 @@ public class RobotContainer {
         // desiredRaw is the angle pointing toward the target. To have the
         // back of the robot face the target, flip by 180 degrees (PI
         // radians) so the desired heading points away from the target.
-        double desiredRaw = Math.atan2(dy, dx) + Math.PI;
+        double desiredRaw = Math.atan2(dy, dx); //+ Math.PI;
 
         double currentRaw = pose.getRotation().getRadians();
 
@@ -500,6 +496,10 @@ public class RobotContainer {
 
         // Reset the field-centric heading on left bumper press.
         driver.y().onTrue(drivetrain.runOnce(drivetrain::seedFieldCentric));
+
+        // emergency servo reset
+        //driver.povUp().onTrue(new InstantCommand(() -> m_Shooter.SetHood(25)));
+        driver.povDown().onTrue(new InstantCommand(() -> m_Shooter.SetHood(70)));
 
         driver.rightTrigger().whileTrue(new DriveToTargetDropIn(drivetrain, () -> drivetrain.getPose2d(),
                 () -> DriverStation.getAlliance().get(), "RightTrench"));
@@ -713,16 +713,16 @@ public class RobotContainer {
         // m_Shooter.DeactivatePreShot()));
         // Sys ID code
 
-        driver.povUp().whileTrue(drivetrain.applyRequest(() -> forwardStraight.withVelocityX(0.5).withVelocityY(0)));
-        driver.povDown().whileTrue(drivetrain.applyRequest(() -> forwardStraight.withVelocityX(-0.5).withVelocityY(0)));
+        //driver.povUp().whileTrue(drivetrain.applyRequest(() -> forwardStraight.withVelocityX(0.5).withVelocityY(0)));
+       // driver.povDown().whileTrue(drivetrain.applyRequest(() -> forwardStraight.withVelocityX(-0.5).withVelocityY(0)));
 
         // Run SysId routines when holding back/start and X/Y.
         // Note that each routine should be run exactly once in a single log.
-        driver.back().and(driver.y()).whileTrue(drivetrain.sysIdDynamic(Direction.kForward));
+        /*driver.back().and(driver.y()).whileTrue(drivetrain.sysIdDynamic(Direction.kForward));
         driver.back().and(driver.x()).whileTrue(drivetrain.sysIdDynamic(Direction.kReverse));
         driver.start().and(driver.y()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kForward));
         driver.start().and(driver.x()).whileTrue(drivetrain.sysIdQuasistatic(Direction.kReverse));
-
+*/
         // drivetrain.registerTelemetry(logger::telemeterize);
     }
 
