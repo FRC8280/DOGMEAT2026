@@ -73,9 +73,9 @@ public class Constants {
         public static final double kP = 0.3;//0.12761;
         public static final double kI = 0;
         public static final double kD = 0;
-        public static final double kS = 0.095501;
-        public static final double kV = 0.1156;
-        public static final double kA = 0.011068;
+        public static final double kS = 0.065323;//0.095501;
+        public static final double kV = 0.11877;//0.1156;
+        public static final double kA = 0.021233;//0.011068;
 
         //Accelerator PID values (if using)
         public static final double kAccelP = 0.3;//0.014922;
@@ -122,7 +122,7 @@ public class Constants {
         public static Translation2d RedHub = new Translation2d(11.89, 4.035);
 
         public static double kPassRPM = 250; //3000;
-        public static int kPassHoodDeg = 45; //35;
+        public static int kPassHoodDeg = 30; //35;
     }
 
     public static final class HoodConstants {

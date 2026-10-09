@@ -58,10 +58,10 @@ public class Indexer extends SubsystemBase {
         m_IndexerMotor.setControl(velocityRequest.withVelocity(RPM/60));
     }
     public void startIndexer() {
-        setRPM(IndexerConstants.kSpeed * -1);
+        setRPM(IndexerConstants.kSpeed * 1);
     }
     public void reverseIndexer() {
-        setRPM(IndexerConstants.kSpeed * 1);
+        setRPM(IndexerConstants.kSpeed * -1);
     }
     public void stopIndexer() {
         m_IndexerMotor.setControl(neutralOut);

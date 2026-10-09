@@ -100,10 +100,10 @@ public class RobotContainer {
     private static final double kIntakeDeployDuration = 0.25;
     private boolean m_intakeCycleRunning = false;
 
-    private double driveScaler = 0.8;
+    private double driveScaler = 0.65;
     private double MaxSpeed = 1.0 * TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top
                                                                                         // speed
-    private double MaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second
+    private double MaxAngularRate = driveScaler* RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second
                                                                                       // max angular velocity
 
     /* Setting up bindings for necessary control of the swerve drive platform */

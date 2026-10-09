@@ -19,13 +19,22 @@ public class ShooterLookup {
     // distance, rpm, hoodDeg
    
     //Dogmesat values from post Troy 4/1/26 
-    addPoint(1.5, 2400, 53); //layup distance confirmed
-    addPoint(2.5, 3100, 51);
-    addPoint(2.8000, 3000, 51);
+   
+      /* addPoint(2.5, 3100, 65);
+    addPoint(2.8000, 3000, 65);
+    addPoint(3.3000, 3250, 65);   //Configrmed 3/22
+    addPoint(4.0, 3750, 65);      //confirmed lower percetage 3/22
+    addPoint(7.0, 5600, 65);      //confirmed lower percetage 3/22
+    addPoint(10.0, 5600, 65); */
+
+    addPoint(1.5, 2400, 60); //layup distance confirmed
+    addPoint(2.5, 3100, 65);
+    addPoint(2.8000, 3050, 60);
+    addPoint(3.0000, 3000, 55);
     addPoint(3.3000, 3250, 48);   //Configrmed 3/22
     addPoint(4.0, 3750, 48);      //confirmed lower percetage 3/22
-    addPoint(7.0, 5600, 45);      //confirmed lower percetage 3/22
-    addPoint(10.0, 5600, 45);  
+    //addPoint(7.0, 5600, 45);      //confirmed lower percetage 3/22
+    //addPoint(10.0, 5600, 45);  
 
     //New shooter values for 4/14 - Inugami values
     /*addPoint(1.5, 2500, 70);
